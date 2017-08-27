@@ -42,9 +42,7 @@ public class Main {
     }
 
     public static void preOrder1(TreeNode treeNode) {
-        if (treeNode == null) {
-            return;
-        }
+        if (treeNode == null) return;
 
         System.out.println(treeNode.val);
         preOrder1(treeNode.left);
@@ -52,9 +50,7 @@ public class Main {
     }
 
     public static void preOrder2(TreeNode treeNode) {
-        if (treeNode == null) {
-            return;
-        }
+        if (treeNode == null) return;
 
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
@@ -71,9 +67,7 @@ public class Main {
     }
 
     public static void inOrder1(TreeNode treeNode) {
-        if (treeNode == null) {
-            return;
-        }
+        if (treeNode == null) return;
 
         inOrder1(treeNode.left);
         System.out.println(treeNode.val);
@@ -81,9 +75,7 @@ public class Main {
     }
 
     public static void inOrder2(TreeNode treeNode) {
-        if (treeNode == null) {
-            return;
-        }
+        if (treeNode == null) return;
 
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
@@ -123,13 +115,8 @@ public class Main {
             treeNode = stack.pop();
             output.push(treeNode);
 
-            if (treeNode.left != null) {
-                stack.push(treeNode.left);
-            }
-
-            if (treeNode.right != null) {
-                stack.push(treeNode.right);
-            }
+            if (treeNode.left != null) stack.push(treeNode.left);
+            if (treeNode.right != null) stack.push(treeNode.right);
 
         }
 

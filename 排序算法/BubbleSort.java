@@ -25,6 +25,8 @@ class BubbleSort {
                     flag = true;
                 }
             }
+
+            if (!flag) break;
         }
     }
 

@@ -39,6 +39,9 @@ public class Main {
 
         System.out.println("post2");
         postOrder2(root);
+
+        System.out.println("post3");
+        postOrder3(root);
     }
 
     public static void preOrder1(TreeNode treeNode) {
@@ -122,6 +125,33 @@ public class Main {
 
         while (!output.isEmpty()) {
             System.out.println(output.pop().val);
+        }
+    }
+
+    public static void postOrder3(TreeNode treeNode) {
+        if (treeNode == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        TreeNode last = treeNode;
+
+        while (treeNode != null || !stack.isEmpty()) {
+            while (treeNode != null) {
+                stack.push(treeNode);
+                treeNode = treeNode.left;
+            }
+
+            treeNode = stack.peek();
+
+            if (treeNode.right == null || treeNode.right == last) {
+                System.out.println(treeNode.val);
+                stack.pop();
+                last = treeNode;
+                treeNode = null;
+            } else {
+                treeNode = treeNode.right;
+            }
         }
     }
 
